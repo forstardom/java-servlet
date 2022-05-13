@@ -18,6 +18,7 @@ public class RequestBodyStringServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletInputStream inputStream = request.getInputStream();
         String messageBody = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8);
+
         System.out.println("messageBody = " + messageBody);
 
         response.getWriter().write("ok");
